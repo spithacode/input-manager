@@ -1,5 +1,5 @@
 {
-  "name": "your-package-name",
+  "name": "@spithacode/input-manager",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,15 +12,15 @@
     "build": "tsup src --out-dir dist",
     "prepublishOnly": "pnpm run build"
   },
-  "license": "<license-type>",
-  "author": "<author-name>",
-  "description": "<description-of-your-library>",
+  "license": "MIT",
+  "author": "Sid Ali Assoul",
+  "description": "A package which abstract dealing with keyboard and mouse events for a given HTML element",
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "<repository-url>",
+  "homepage": "https://github.com/spithacode/input-manager",
   "bugs": {
-    "url": "<repository-url>/issues"
+    "url": "https://github.com/spithacode/input-manager/issues"
   },
   "devDependencies": {
     "@types/node": "^22.10.5",
