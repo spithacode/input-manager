@@ -1,4 +1,3 @@
 // types/key-types.ts
-import { validKeys } from "../validKeys";
-
-export type Key = (typeof validKeys)[number]; // Inferred from the validKeys array
+// Use a simple string type instead of a restrictive union type
+export type Key = string;

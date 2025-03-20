@@ -1,9 +1,8 @@
 import { Key } from "./types/keys";
 import { MouseButton, MousePosition } from "./types/mouse";
-import { validKeys } from "./validKeys"; // Import valid keys
 
 export class InputManager {
-  private keys: Set<Key> = new Set();
+  private keys: Set<string> = new Set();
   private mouseButtons: Set<MouseButton> = new Set();
   private mousePosition: MousePosition = { x: 0, y: 0 };
   private element: HTMLElement;
@@ -31,31 +30,20 @@ export class InputManager {
 
   private onMouseDown(event: MouseEvent): void {
     const button = event.button as MouseButton;
-
     this.mouseButtons.add(button);
   }
 
   private onMouseUp(event: MouseEvent): void {
     const button = event.button as MouseButton;
-
     this.mouseButtons.delete(button);
   }
 
   private onKeyDown(event: KeyboardEvent): void {
-    if (this.isValidKey(event.key)) {
-      this.keys.add(event.key as Key);
-    }
+    this.keys.add(event.key);
   }
 
   private onKeyUp(event: KeyboardEvent): void {
-    if (this.isValidKey(event.key)) {
-      this.keys.delete(event.key as Key);
-    }
-  }
-
-  private isValidKey(key: string): key is Key {
-    // Check if the key exists in the validKeys array
-    return validKeys.includes(key as any);
+    this.keys.delete(event.key);
   }
 
   public isKeyPressed(key: Key): boolean {
