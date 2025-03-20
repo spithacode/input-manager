@@ -9,7 +9,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsup src --out-dir dist",
+    "build": "tsup src --out-dir dist --dts",
     "prepublishOnly": "pnpm run build"
   },
   "license": "MIT",
